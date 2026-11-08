@@ -6,16 +6,19 @@
     <title>Private Visitenkarte</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; }
-        body { background-color: #f4f7f6; color: #333; display: flex; min-height: 100vh; }
+        body { background-color: #ffffff; color: #333; display: flex; min-height: 100vh; }
         .container { display: flex; width: 100%; min-height: 100vh; flex-direction: row; }
         
-        /* Linke Seite: Dein hochgeladenes Bild */
+        /* Linke Seite: Das Bild wird nun komplett eingepasst */
         .image-side { 
             flex: 1; 
             background-image: url('Norwaybeauty.jpg'); 
-            background-size: cover; 
-            background-position: center; 
+            background-size: contain; /* Bild wird nicht mehr beschnitten */
+            background-repeat: no-repeat;
+            background-position: center center; 
+            background-color: #ffffff; /* Neutraler Hintergrund für freie Flächen */
             min-height: 300px;
+            padding: 20px;
         }
         
         /* Rechte Seite: Der Inhalt */
@@ -34,7 +37,7 @@
         /* Button-Bereich */
         .button-group { display: flex; flex-direction: column; gap: 12px; }
         
-        /* Der E-Mail-Button mit deiner Proton-Mail */
+        /* Der E-Mail-Button */
         .btn { 
             display: inline-block; 
             padding: 14px 30px; 
@@ -48,24 +51,10 @@
         }
         .btn:hover { background-color: #333; }
 
-        /* Vorbereiteter Bereich für Messenger (Aktuell unsichtbar) */
-        .btn-secondary { 
-            display: inline-block; 
-            padding: 12px 30px; 
-            background-color: #f4f4f4; 
-            color: #333; 
-            text-decoration: none; 
-            border-radius: 4px; 
-            font-weight: 500; 
-            text-align: center;
-            transition: background 0.2s; 
-        }
-        .btn-secondary:hover { background-color: #eaeaea; }
-
         /* Smartphone-Optimierung */
         @media (max-width: 768px) {
             .container { flex-direction: column; }
-            .image-side { min-height: 400px; } /* Mehr Höhe auf Handys für das Hochkant-Bild */
+            .image-side { min-height: 350px; background-position: center center; }
             .content-side { padding: 30px 20px; }
             h1 { font-size: 2rem; }
         }
@@ -74,7 +63,7 @@
 <body>
 
     <div class="container">
-        <!-- Linke Spalte (Bild) -->
+        <!-- Linke Spalte (Bild komplett sichtbar) -->
         <div class="image-side"></div>
         
         <!-- Rechte Spalte (Text) -->
@@ -84,7 +73,6 @@
                 <p>Hier kommt dein persönlicher Freitext hin, den du dir noch in Ruhe überlegst. Du kannst hier beschreiben, wer du bist, was du machst oder wie man dich am besten erreicht.</p>
                 
                 <div class="button-group">
-                    <!-- Deine funktionierende E-Mail-Adresse -->
                     <a href="mailto:anicoins@proton.me" class="btn">E-Mail schreiben</a>
                 </div>
             </div>
