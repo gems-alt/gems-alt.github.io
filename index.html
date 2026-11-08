@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Visitenkarte</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; display: flex; min-height: 100vh; }
+        .container { display: flex; width: 100%; min-height: 100vh; flex-direction: row; }
+        
+        /* Linke Seite: Das Bild */
+        .image-side { 
+            flex: 1; 
+            background-image: url('https://unsplash.com'); 
+            background-size: cover; 
+            background-position: center; 
+            min-height: 300px;
+        }
+        
+        /* Rechte Seite: Der Inhalt */
+        .content-side { 
+            flex: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 40px; 
+            background-color: #ffffff; 
+        }
+        .inner-content { max-width: 450px; width: 100%; }
+        h1 { font-size: 2.5rem; margin-bottom: 20px; color: #111; font-weight: 600; letter-spacing: -0.5px; }
+        p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; color: #666; }
+        
+        /* Der Kontakt-Button */
+        .btn { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            background-color: #111; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-weight: 500; 
+            transition: background 0.2s; 
+        }
+        .btn:hover { background-color: #333; }
+
+        /* Smartphone-Optimierung: Aus Nebeneinander wird Untereinander */
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .image-side { min-height: 250px; }
+            .content-side { padding: 30px 20px; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Linke Spalte (Bild) -->
+        <div class="image-side"></div>
+        
+        <!-- Rechte Spalte (Text) -->
+        <div class="content-side">
+            <div class="inner-content">
+                <h1>Willkommen</h1>
+                <p>Dies ist eine private Visitenkarte. Hier kannst du einen beliebigen Freitext eintragen, um dich oder dein Vorhaben kurz zu beschreiben. Der Text lässt sich jederzeit ganz einfach anpassen.</p>
+                <a href="mailto:deine-mail@posteo.de" class="btn">E-Mail schreiben</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
