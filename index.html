@@ -9,10 +9,10 @@
         body { background-color: #f4f7f6; color: #333; display: flex; min-height: 100vh; }
         .container { display: flex; width: 100%; min-height: 100vh; flex-direction: row; }
         
-        /* Linke Seite: Das Bild */
+        /* Linke Seite: Dein hochgeladenes Bild */
         .image-side { 
             flex: 1; 
-            background-image: url('https://unsplash.com'); 
+            background-image: url('Norwaybeauty.jpg'); 
             background-size: cover; 
             background-position: center; 
             min-height: 300px;
@@ -31,23 +31,41 @@
         h1 { font-size: 2.5rem; margin-bottom: 20px; color: #111; font-weight: 600; letter-spacing: -0.5px; }
         p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; color: #666; }
         
-        /* Der Kontakt-Button */
+        /* Button-Bereich */
+        .button-group { display: flex; flex-direction: column; gap: 12px; }
+        
+        /* Der E-Mail-Button mit deiner Proton-Mail */
         .btn { 
             display: inline-block; 
-            padding: 12px 30px; 
+            padding: 14px 30px; 
             background-color: #111; 
             color: #fff; 
             text-decoration: none; 
             border-radius: 4px; 
             font-weight: 500; 
+            text-align: center;
             transition: background 0.2s; 
         }
         .btn:hover { background-color: #333; }
 
-        /* Smartphone-Optimierung: Aus Nebeneinander wird Untereinander */
+        /* Vorbereiteter Bereich für Messenger (Aktuell unsichtbar) */
+        .btn-secondary { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            background-color: #f4f4f4; 
+            color: #333; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-weight: 500; 
+            text-align: center;
+            transition: background 0.2s; 
+        }
+        .btn-secondary:hover { background-color: #eaeaea; }
+
+        /* Smartphone-Optimierung */
         @media (max-width: 768px) {
             .container { flex-direction: column; }
-            .image-side { min-height: 250px; }
+            .image-side { min-height: 400px; } /* Mehr Höhe auf Handys für das Hochkant-Bild */
             .content-side { padding: 30px 20px; }
             h1 { font-size: 2rem; }
         }
@@ -63,8 +81,12 @@
         <div class="content-side">
             <div class="inner-content">
                 <h1>Willkommen</h1>
-                <p>Dies ist eine private Visitenkarte. Hier kannst du einen beliebigen Freitext eintragen, um dich oder dein Vorhaben kurz zu beschreiben. Der Text lässt sich jederzeit ganz einfach anpassen.</p>
-                <a href="mailto:deine-mail@posteo.de" class="btn">E-Mail schreiben</a>
+                <p>Hier kommt dein persönlicher Freitext hin, den du dir noch in Ruhe überlegst. Du kannst hier beschreiben, wer du bist, was du machst oder wie man dich am besten erreicht.</p>
+                
+                <div class="button-group">
+                    <!-- Deine funktionierende E-Mail-Adresse -->
+                    <a href="mailto:anicoins@proton.me" class="btn">E-Mail schreiben</a>
+                </div>
             </div>
         </div>
     </div>
