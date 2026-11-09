@@ -32,7 +32,7 @@
         }
         .inner-content { max-width: 450px; width: 100%; }
         
-        /* Überschrift mit erhöhtem Abstand nach unten (35px statt 20px) */
+        /* Überschrift mit erhöhtem Abstand nach unten */
         h1 { font-size: 2.5rem; margin-bottom: 35px; color: #111; font-weight: 600; letter-spacing: -0.5px; }
         p { font-size: 1.05rem; line-height: 1.6; margin-bottom: 35px; color: #555; }
         
@@ -51,10 +51,10 @@
             transition: background 0.2s, color 0.2s; 
         }
 
-        /* E-Mail (Jetzt beschriftet mit deiner Adresse) */
-        .btn-mail { background-color: #111; color: #fff; cursor: text; } /* cursor: text signalisiert, dass man den Text kopieren kann */
+        /* E-Mail Box (Kopierbar) */
+        .btn-mail { background-color: #111; color: #fff; cursor: text; }
 
-        /* Messenger (Sekundär-Buttons, hell) */
+        /* Messenger Links (Anklickbar) */
         .btn-messenger { background-color: #f4f4f4; color: #333; }
         .btn-messenger:hover { background-color: #eaeaea; }
         .btn-id { font-weight: normal; color: #666; margin-left: 4px; }
@@ -90,12 +90,14 @@
                 <p>Hier kommt dein persönlicher Freitext hin, den du dir gerade in deinem Dokument zusammenstellst. Sobald du den Text fertig hast, kannst du diesen Absatz einfach durch deine Zeilen ersetzen.</p>
                 
                 <div class="button-group">
-                    <!-- E-Mail-Button (Ausgeschrieben und ohne automatischen mailto-Zwang) -->
+                    <!-- E-Mail (Anzeige zum Kopieren) -->
                     <span class="btn-small btn-mail">gems26@proton.me</span>
                     
-                    <!-- Messenger -->
+                    <!-- Telegram (Direkt-Chat-Link) -->
                     <a href="https://t.me" target="_blank" class="btn-small btn-messenger">Telegram<span class="btn-id">@gems261</span></a>
-                    <a href="https://signal.me" target="_blank" class="btn-messenger btn-small">Signal<span class="btn-id">Gems.05</span></a>
+                    
+                    <!-- Signal (Direkt-Chat-Link) -->
+                    <a href="https://signal.me" target="_blank" class="btn-small btn-messenger">Signal<span class="btn-id">Gems.05</span></a>
                 </div>
 
                 <!-- Zusatzhinweis -->
