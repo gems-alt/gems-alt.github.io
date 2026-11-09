@@ -32,47 +32,37 @@
         }
         .inner-content { max-width: 450px; width: 100%; }
         h1 { font-size: 2.5rem; margin-bottom: 20px; color: #111; font-weight: 600; letter-spacing: -0.5px; }
-        p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; color: #666; }
+        p { font-size: 1.05rem; line-height: 1.6; margin-bottom: 35px; color: #555; }
         
-        /* Button-Bereich */
-        .button-group { display: flex; flex-direction: column; gap: 10px; }
+        /* Kompakter Button-Bereich nebeneinander */
+        .button-group { display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
         
-        /* Haupt-Button (E-Mail) */
-        .btn { 
+        /* Gemeinsame Basis für alle kleinen Buttons */
+        .btn-small { 
             display: inline-block; 
-            padding: 14px 30px; 
-            background-color: #111; 
-            color: #fff; 
+            padding: 8px 16px; 
+            font-size: 0.85rem;
+            font-weight: 500; 
             text-decoration: none; 
             border-radius: 4px; 
-            font-weight: 500; 
             text-align: center;
-            transition: background 0.2s; 
+            transition: background 0.2s, color 0.2s; 
         }
-        .btn:hover { background-color: #333; }
 
-        /* Messenger-Buttons */
-        .btn-messenger { 
-            display: inline-block; 
-            padding: 10px 20px; 
-            background-color: #f4f4f4; 
-            color: #333; 
-            text-decoration: none; 
-            border-radius: 4px; 
-            font-weight: 500; 
-            text-align: center;
-            font-size: 0.95rem;
-            transition: background 0.2s; 
-        }
+        /* E-Mail (Haupt-Button, dunkel) */
+        .btn-mail { background-color: #111; color: #fff; }
+        .btn-mail:hover { background-color: #333; }
+
+        /* Messenger (Sekundär-Buttons, hell) */
+        .btn-messenger { background-color: #f4f4f4; color: #333; }
         .btn-messenger:hover { background-color: #eaeaea; }
-        .btn-id { font-size: 0.8rem; display: block; color: #777; font-weight: normal; margin-top: 2px; }
+        .btn-id { font-weight: normal; color: #666; margin-left: 4px; }
 
         /* Hinweis unter den Buttons */
         .hint { 
-            text-align: center; 
-            font-size: 0.85rem; 
+            font-size: 0.8rem; 
             color: #999; 
-            margin-top: 15px; 
+            margin-top: 5px; 
             font-style: italic; 
         }
 
@@ -82,6 +72,7 @@
             .image-side { min-height: 350px; }
             .content-side { padding: 30px 20px; }
             h1 { font-size: 2rem; }
+            .button-group { flex-direction: column; } /* Auf dem Handy untereinander für bessere Klickbarkeit */
         }
     </style>
 </head>
@@ -98,16 +89,15 @@
                 <p>Hier kommt dein persönlicher Freitext hin, den du dir noch in Ruhe überlegst. Du kannst hier beschreiben, wer du bist, was du machst oder wie man dich am besten erreicht.</p>
                 
                 <div class="button-group">
-                    <!-- E-Mail-Adresse -->
-                    <a href="mailto:gems26@proton.me" class="btn">E-Mail schreiben</a>
+                    <!-- E-Mail -->
+                    <a href="mailto:gems26@proton.me" class="btn-small btn-mail">E-Mail</a>
                     
-                    <!-- Gefilterte Messenger Buttons -->
-                    <a href="https://t.me" target="_blank" class="btn-messenger">Telegram <span class="btn-id">@gems261</span></a>
-                    <a href="https://signal.me" target="_blank" class="btn-messenger">Signal <span class="btn-id">Gems.05</span></a>
-                    <a href="https://sessionapp.link" target="_blank" class="btn-messenger">Session <span class="btn-id">ID kopieren</span></a>
+                    <!-- Messenger -->
+                    <a href="https://t.me" target="_blank" class="btn-small btn-messenger">Telegram<span class="btn-id">@gems261</span></a>
+                    <a href="https://signal.me" target="_blank" class="btn-messenger btn-small">Signal<span class="btn-id">Gems.05</span></a>
                 </div>
 
-                <!-- Dein gewünschter Zusatzhinweis -->
+                <!-- Zusatzhinweis -->
                 <div class="hint">Weitere Messenger auf Anfrage</div>
             </div>
         </div>
