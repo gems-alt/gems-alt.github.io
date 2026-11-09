@@ -9,14 +9,14 @@
         body { background-color: #ffffff; color: #333; display: flex; min-height: 100vh; }
         .container { display: flex; width: 100%; min-height: 100vh; flex-direction: row; }
         
-        /* Linke Seite: Das Bild wird nun komplett eingepasst */
+        /* Linke Seite: Dein hochgeladenes Bild */
         .image-side { 
             flex: 1; 
             background-image: url('Norwaybeauty.jpg'); 
-            background-size: contain; /* Bild wird nicht mehr beschnitten */
+            background-size: contain; 
             background-repeat: no-repeat;
             background-position: center center; 
-            background-color: #ffffff; /* Neutraler Hintergrund für freie Flächen */
+            background-color: #ffffff; 
             min-height: 300px;
             padding: 20px;
         }
@@ -35,9 +35,9 @@
         p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; color: #666; }
         
         /* Button-Bereich */
-        .button-group { display: flex; flex-direction: column; gap: 12px; }
+        .button-group { display: flex; flex-direction: column; gap: 10px; }
         
-        /* Der E-Mail-Button */
+        /* Haupt-Button (E-Mail) */
         .btn { 
             display: inline-block; 
             padding: 14px 30px; 
@@ -51,10 +51,35 @@
         }
         .btn:hover { background-color: #333; }
 
+        /* Messenger-Buttons */
+        .btn-messenger { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            background-color: #f4f4f4; 
+            color: #333; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-weight: 500; 
+            text-align: center;
+            font-size: 0.95rem;
+            transition: background 0.2s; 
+        }
+        .btn-messenger:hover { background-color: #eaeaea; }
+        .btn-id { font-size: 0.8rem; display: block; color: #777; font-weight: normal; margin-top: 2px; }
+
+        /* Hinweis unter den Buttons */
+        .hint { 
+            text-align: center; 
+            font-size: 0.85rem; 
+            color: #999; 
+            margin-top: 15px; 
+            font-style: italic; 
+        }
+
         /* Smartphone-Optimierung */
         @media (max-width: 768px) {
             .container { flex-direction: column; }
-            .image-side { min-height: 350px; background-position: center center; }
+            .image-side { min-height: 350px; }
             .content-side { padding: 30px 20px; }
             h1 { font-size: 2rem; }
         }
@@ -63,7 +88,7 @@
 <body>
 
     <div class="container">
-        <!-- Linke Spalte (Bild komplett sichtbar) -->
+        <!-- Linke Spalte (Bild) -->
         <div class="image-side"></div>
         
         <!-- Rechte Spalte (Text) -->
@@ -73,8 +98,17 @@
                 <p>Hier kommt dein persönlicher Freitext hin, den du dir noch in Ruhe überlegst. Du kannst hier beschreiben, wer du bist, was du machst oder wie man dich am besten erreicht.</p>
                 
                 <div class="button-group">
-                    <a href="mailto:anicoins@proton.me" class="btn">E-Mail schreiben</a>
+                    <!-- E-Mail-Adresse -->
+                    <a href="mailto:gems26@proton.me" class="btn">E-Mail schreiben</a>
+                    
+                    <!-- Gefilterte Messenger Buttons -->
+                    <a href="https://t.me" target="_blank" class="btn-messenger">Telegram <span class="btn-id">@gems261</span></a>
+                    <a href="https://signal.me" target="_blank" class="btn-messenger">Signal <span class="btn-id">Gems.05</span></a>
+                    <a href="https://sessionapp.link" target="_blank" class="btn-messenger">Session <span class="btn-id">ID kopieren</span></a>
                 </div>
+
+                <!-- Dein gewünschter Zusatzhinweis -->
+                <div class="hint">Weitere Messenger auf Anfrage</div>
             </div>
         </div>
     </div>
