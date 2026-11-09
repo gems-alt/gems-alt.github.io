@@ -21,17 +21,19 @@
             padding: 20px;
         }
         
-        /* Rechte Seite: Der Inhalt (jetzt nach oben ausgerichtet) */
+        /* Rechte Seite: Der Inhalt */
         .content-side { 
             flex: 1; 
             display: flex; 
-            align-items: flex-start; /* Verschiebt den Inhalt nach oben */
+            align-items: flex-start; 
             justify-content: center; 
-            padding: 80px 40px 40px 40px; /* Mehr Platz nach oben hin */
+            padding: 80px 40px 40px 40px; 
             background-color: #ffffff; 
         }
         .inner-content { max-width: 450px; width: 100%; }
-        h1 { font-size: 2.5rem; margin-bottom: 20px; color: #111; font-weight: 600; letter-spacing: -0.5px; }
+        
+        /* Überschrift mit erhöhtem Abstand nach unten (35px statt 20px) */
+        h1 { font-size: 2.5rem; margin-bottom: 35px; color: #111; font-weight: 600; letter-spacing: -0.5px; }
         p { font-size: 1.05rem; line-height: 1.6; margin-bottom: 35px; color: #555; }
         
         /* Kompakter Button-Bereich nebeneinander */
@@ -49,9 +51,8 @@
             transition: background 0.2s, color 0.2s; 
         }
 
-        /* E-Mail (Haupt-Button, dunkel) */
-        .btn-mail { background-color: #111; color: #fff; }
-        .btn-mail:hover { background-color: #333; }
+        /* E-Mail (Jetzt beschriftet mit deiner Adresse) */
+        .btn-mail { background-color: #111; color: #fff; cursor: text; } /* cursor: text signalisiert, dass man den Text kopieren kann */
 
         /* Messenger (Sekundär-Buttons, hell) */
         .btn-messenger { background-color: #f4f4f4; color: #333; }
@@ -71,7 +72,7 @@
             .container { flex-direction: column; }
             .image-side { min-height: 350px; }
             .content-side { padding: 40px 20px; }
-            h1 { font-size: 2rem; }
+            h1 { font-size: 2rem; margin-bottom: 25px; }
             .button-group { flex-direction: column; }
         }
     </style>
@@ -89,8 +90,8 @@
                 <p>Hier kommt dein persönlicher Freitext hin, den du dir gerade in deinem Dokument zusammenstellst. Sobald du den Text fertig hast, kannst du diesen Absatz einfach durch deine Zeilen ersetzen.</p>
                 
                 <div class="button-group">
-                    <!-- E-Mail -->
-                    <a href="mailto:gems26@proton.me" class="btn-small btn-mail">E-Mail</a>
+                    <!-- E-Mail-Button (Ausgeschrieben und ohne automatischen mailto-Zwang) -->
+                    <span class="btn-small btn-mail">gems26@proton.me</span>
                     
                     <!-- Messenger -->
                     <a href="https://t.me" target="_blank" class="btn-small btn-messenger">Telegram<span class="btn-id">@gems261</span></a>
