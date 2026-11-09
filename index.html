@@ -21,13 +21,13 @@
             padding: 20px;
         }
         
-        /* Rechte Seite: Der Inhalt */
+        /* Rechte Seite: Der Inhalt (jetzt nach oben ausgerichtet) */
         .content-side { 
             flex: 1; 
             display: flex; 
-            align-items: center; 
+            align-items: flex-start; /* Verschiebt den Inhalt nach oben */
             justify-content: center; 
-            padding: 40px; 
+            padding: 80px 40px 40px 40px; /* Mehr Platz nach oben hin */
             background-color: #ffffff; 
         }
         .inner-content { max-width: 450px; width: 100%; }
@@ -70,9 +70,9 @@
         @media (max-width: 768px) {
             .container { flex-direction: column; }
             .image-side { min-height: 350px; }
-            .content-side { padding: 30px 20px; }
+            .content-side { padding: 40px 20px; }
             h1 { font-size: 2rem; }
-            .button-group { flex-direction: column; } /* Auf dem Handy untereinander für bessere Klickbarkeit */
+            .button-group { flex-direction: column; }
         }
     </style>
 </head>
@@ -86,7 +86,7 @@
         <div class="content-side">
             <div class="inner-content">
                 <h1>Willkommen</h1>
-                <p>Hier kommt dein persönlicher Freitext hin, den du dir noch in Ruhe überlegst. Du kannst hier beschreiben, wer du bist, was du machst oder wie man dich am besten erreicht.</p>
+                <p>Hier kommt dein persönlicher Freitext hin, den du dir gerade in deinem Dokument zusammenstellst. Sobald du den Text fertig hast, kannst du diesen Absatz einfach durch deine Zeilen ersetzen.</p>
                 
                 <div class="button-group">
                     <!-- E-Mail -->
