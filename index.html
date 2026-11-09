@@ -1,124 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Willkommen – Private Visitenkarte</title>
+<style>
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; }
-
 body { background-color: #ffffff; color: #333; }
-
 .container { display: flex; width: 100%; min-height: 100vh; flex-direction: row; }
-
-/* Linke Seite: Bild */
-.image-side {
-    flex: 1;
-    background-image: url('Norwaybeauty.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #ffffff;
-    min-height: 300px;
-    padding: 20px;
-}
-
-/* Bild bleibt beim Scrollen stehen (nur Desktop) */
-@media (min-width: 769px) {
-    .image-side.sticky { position: sticky; top: 0; height: 100vh; align-self: flex-start; }
-}
-
-/* Rechte Seite: Inhalt */
-.content-side {
-    flex: 1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 80px 40px 40px 40px;
-    background-color: #ffffff;
-}
-
+.image-side { flex: 1; background-image: url('Norwaybeauty.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center center; background-color: #ffffff; min-height: 300px; padding: 20px; }
+.content-side { flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: 80px 40px 40px 40px; background-color: #ffffff; }
 .inner-content { max-width: 450px; width: 100%; }
-.content-side.reading .inner-content { max-width: 540px; }
-.content-side.reading { padding-bottom: 60px; }
-
 h1 { font-size: 2.2rem; margin-bottom: 32px; color: #111; font-weight: 600; letter-spacing: -0.5px; }
-.content-side.reading h1 { font-size: 2rem; margin-bottom: 30px; }
-
 p { font-size: 1.05rem; line-height: 1.6; margin-bottom: 32px; color: #555; }
-.content-side.reading p { margin-bottom: 18px; }
-
-h2 { font-size: 1.15rem; color: #111; font-weight: 600; margin: 34px 0 14px; }
-
-.note { font-size: 0.95rem; color: #777; font-style: italic; }
-
-a.inline { color: #111; text-decoration: underline; text-underline-offset: 2px; }
-a.inline:hover { color: #666; }
-
-hr { border: 0; border-top: 1px solid #eee; margin: 34px 0; }
-
-/* Button-Gruppe Startseite */
 .button-group { display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
-
-.btn-small {
-    display: inline-block;
-    padding: 8px 16px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 4px;
-    text-align: center;
-    transition: background 0.2s, color 0.2s;
-}
-
+.btn-small { display: inline-block; padding: 8px 16px; font-size: 0.85rem; font-weight: 500; text-decoration: none; border-radius: 4px; text-align: center; transition: background 0.2s, color 0.2s; }
 .btn-mail { background-color: #111; color: #fff; cursor: text; }
 .btn-messenger { background-color: #f4f4f4; color: #333; }
 .btn-messenger:hover { background-color: #eaeaea; }
 .btn-id { font-weight: normal; color: #666; margin-left: 4px; }
-
 .hint { font-size: 0.8rem; color: #999; margin-top: 5px; font-style: italic; }
-
-/* Hauptbutton */
-.btn-primary {
-    display: block;
-    width: 100%;
-    padding: 13px 20px;
-    margin-bottom: 30px;
-    background-color: #111;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    transition: background 0.2s;
-}
+.btn-primary { display: block; width: 100%; padding: 13px 20px; margin-bottom: 30px; background-color: #111; color: #fff; text-decoration: none; border-radius: 4px; text-align: center; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.3px; transition: background 0.2s; }
 .btn-primary:hover { background-color: #3a3a3a; }
-
-/* Seitennavigation */
-.pager { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 45px; padding-top: 25px; border-top: 1px solid #eee; }
-
-.pager a {
-    flex: 1;
-    min-width: 110px;
-    padding: 11px 16px;
-    border: 1px solid #111;
-    border-radius: 4px;
-    color: #111;
-    text-decoration: none;
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-.pager a:hover { background-color: #111; color: #fff; }
-
-.pager a.next { background-color: #111; color: #fff; }
-.pager a.next:hover { background-color: #3a3a3a; border-color: #3a3a3a; }
-
-.pager a.home { flex: 0 0 auto; border-color: #ddd; color: #666; }
-.pager a.home:hover { background-color: #f4f4f4; color: #111; border-color: #ddd; }
-
-/* Smartphone */
 @media (max-width: 768px) {
-    .container { flex-direction: column; }
-    .image-side { min-height: 350px; }
-    .content-side { padding: 40px 20px; }
-    .content-side.reading { padding-bottom: 50px; }
-    h1, .content-side.reading h1 { font-size: 1.9rem; margin-bottom: 25px; }
-    .button-group { flex-direction: column; }
+  .container { flex-direction: column; }
+  .image-side { min-height: 350px; }
+  .content-side { padding: 40px 20px; }
+  h1 { font-size: 1.9rem; margin-bottom: 25px; }
+  .button-group { flex-direction: column; }
 }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="image-side"></div>
+
+  <div class="content-side">
+    <div class="inner-content">
+      <h1>Willkommen auf meiner kleinen Homepage!</h1>
+
+      <p>Diese Seite richtet sich in erster Linie an Anbieter und Liebhaber von getragener Mädchenwäsche.</p>
+      <p>Trotzdem sind aber auch ausdrücklich Anbieter und Interessenten für getragene Jungenwäsche willkommen, auch wenn das nur ein kleiner Randbereich ist.</p>
+      <p>Was diese ein bisschen anders und in meinen Augen besonders macht, stelle ich gerne auf der nachfolgenden Seite ausführlich vor.</p>
+
+      <a href="konzept.html" class="btn-primary">Herein</a>
+
+      <div class="button-group">
+        <span class="btn-small btn-mail">gems26@proton.me</span>
+        <a href="https://t.me/gems261" target="_blank" rel="noopener" class="btn-small btn-messenger">Telegram<span class="btn-id">@gems261</span></a>
+        <a href="https://signal.me" target="_blank" rel="noopener" class="btn-small btn-messenger">Signal<span class="btn-id">Gems.05</span></a>
+      </div>
+
+      <div class="hint">Weitere Messenger auf Anfrage</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
